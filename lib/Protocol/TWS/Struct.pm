@@ -1,4 +1,4 @@
-package Protocol::TWS::Base;
+package Protocol::TWS::Struct;
 
 use strict;
 use warnings;
