@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 14 }
+sub _id { 14 }
 
-sub meta {
+sub _meta {
     return (
         logLevel => 'int',
     );

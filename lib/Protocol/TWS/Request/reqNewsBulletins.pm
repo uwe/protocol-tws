@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 12 }
+sub _id { 12 }
 
-sub meta {
+sub _meta {
     return (
         allMsgs => 'bool',
     );

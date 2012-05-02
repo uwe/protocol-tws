@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 59 }
+sub _id { 59 }
 
-sub meta {
+sub _meta {
     return (
         marketDataType => 'int',
     );

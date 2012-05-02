@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 9 }
+sub _id { 9 }
 
-sub meta {
+sub _meta {
     return (
         reqId    => 'int',
         contract => 'Contract',

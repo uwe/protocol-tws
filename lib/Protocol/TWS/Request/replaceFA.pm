@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 19 }
+sub _id { 19 }
 
-sub meta {
+sub _meta {
     return (
         faDataType => 'long',
         XML        => {},

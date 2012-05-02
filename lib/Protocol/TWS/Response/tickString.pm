@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub id { 46 }
+sub _id { 46 }
 
-sub meta {
+sub _meta {
     return (
         tickerId => 'tickerId',
         tickType => 'tickType',

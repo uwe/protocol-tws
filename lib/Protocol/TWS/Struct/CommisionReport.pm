@@ -6,7 +6,7 @@ use warnings;
 use base 'Protocol::TWS::Struct';
 
 
-sub meta {
+sub _meta {
     (
      execId              => {},
      commission          => {type => 'double', default => 0},

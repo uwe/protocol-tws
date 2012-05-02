@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 4 }
+sub _id { 4 }
 
-sub meta {
+sub _meta {
     return (
         id => 'orderId',
     );

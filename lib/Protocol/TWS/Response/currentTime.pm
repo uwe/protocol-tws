@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub id { 49 }
+sub _id { 49 }
 
-sub meta {
+sub _meta {
     return (
         time => 'long',
     );

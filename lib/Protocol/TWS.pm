@@ -9,8 +9,8 @@ my @STRUCTS   = Module::Find::useall('Protocol::TWS::Struct');
 my @REQUESTS  = Module::Find::useall('Protocol::TWS::Request');
 my @RESPONSES = Module::Find::useall('Protocol::TWS::Response');
 
-my %REQUEST_ID  = map { $_->id => $_ } @REQUESTS;
-my %RESPONSE_ID = map { $_->id => $_ } @RESPONSES;
+my %REQUEST_ID  = map { $_->_id => $_ } @REQUESTS;
+my %RESPONSE_ID = map { $_->_id => $_ } @RESPONSES;
 
 
 sub response_by_id {

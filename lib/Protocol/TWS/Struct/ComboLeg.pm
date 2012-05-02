@@ -6,7 +6,7 @@ use warnings;
 use base 'Protocol::TWS::Struct';
 
 
-sub meta {
+sub _meta {
     (
      conId              => {type => 'long', default => 0},
      ratio              => {type => 'long', default => 0},

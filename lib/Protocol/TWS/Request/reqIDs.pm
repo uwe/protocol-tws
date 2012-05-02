@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 8 }
+sub _id { 8 }
 
-sub meta {
+sub _meta {
     return (
         numIds => 'int',
     );

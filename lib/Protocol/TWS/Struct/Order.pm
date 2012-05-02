@@ -6,7 +6,7 @@ use warnings;
 use base 'Protocol::TWS::Struct';
 
 
-sub meta {
+sub _meta {
     (
      orderId                       => {type => 'long',   default => 0},
      clientId                      => {type => 'long',   default => 0},

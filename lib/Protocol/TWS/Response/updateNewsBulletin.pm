@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub id { 14 }
+sub _id { 14 }
 
-sub meta {
+sub _meta {
     return (
         msgId        => 'int',
         msgType      => 'int',

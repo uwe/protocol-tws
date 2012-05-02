@@ -6,7 +6,7 @@ use warnings;
 use base 'Protocol::TWS::Struct';
 
 
-sub meta {
+sub _meta {
     (
      numberOfRows             => {type => 'int',    default => -1},
      instrument               => {},

@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 17 }
+sub _id { 17 }
 
-sub meta {
+sub _meta {
 }
 
 1;

@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Request';
 
 
-sub id { 6 }
+sub _id { 6 }
 
-sub meta {
+sub _meta {
     return (
         subscribe => 'bool',
         acctCode  => {},

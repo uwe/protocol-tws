@@ -6,11 +6,11 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub id { 9 }
+sub _id { 9 }
 
-sub meta {
+sub _meta {
     return (
-        orderId => 'orderId',
+        id => {alias => 'orderId'},
     );
 }
 

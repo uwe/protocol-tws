@@ -6,9 +6,9 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub id { 7 }
+sub _id { 7 }
 
-sub meta {
+sub _meta {
     return (
         contract      => 'Contract',
         position      => 'int',
