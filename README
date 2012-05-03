@@ -1,0 +1,6 @@
+EXPERIMENTAL - do not use for real trades!
+
+missing:
+- parsing of data structures (Order, ComboLeg, etc.)
+- variable length messages (e. g. openOrder)
+
