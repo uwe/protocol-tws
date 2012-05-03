@@ -10,7 +10,7 @@ sub _id { 3 }
 
 sub _meta {
     return (
-        id            => 'orderId',
+        id            => {alias => 'orderId'},
         status        => {},
         filled        => 'int',
         remaining     => 'int',

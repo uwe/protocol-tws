@@ -23,5 +23,12 @@ sub _meta {
     );
 }
 
+sub _lines { 4 }
+
+sub _parse {
+    die
+}
+
+
 1;
 

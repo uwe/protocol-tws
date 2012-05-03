@@ -40,15 +40,18 @@ sub _lines {
 
     my %meta = $class->_meta;
 
-    return 1 + scalar keys %meta;
+    return scalar keys %meta;
 }
 
 sub _minimum_version { 1 }
 
 sub _parse {
-    my ($class, $version, @data) = @_;
+    my ($class, $version, $data) = @_;
 
-    ###TODO### check _lines?
+    # check lines
+    if (@$data < $class->_lines) {
+        die \($class->_lines);
+    }
 
     my @meta = $class->_meta;
 
@@ -59,7 +62,7 @@ sub _parse {
 
         ###TODO### check data types?
 
-        $data{$name} = shift @data;
+        $data{$name} = shift @$data;
     }
 
     return $class->new(%data);

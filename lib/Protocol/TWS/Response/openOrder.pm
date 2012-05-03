@@ -17,5 +17,14 @@ sub _meta {
     );
 }
 
+sub _lines { die }
+
+sub _parse {
+    my ($class, $version, $data) = @_;
+
+    die 'TODO';
+}
+
+
 1;
 

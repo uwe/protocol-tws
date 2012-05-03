@@ -10,7 +10,7 @@ sub _id { 21 }
 
 sub _meta {
     return (
-        id         => 'tickerId',
+        id         => {alias => 'tickerId'},
         tickType   => 'tickType',
         impliedVol => 'double',
         delta      => 'double',

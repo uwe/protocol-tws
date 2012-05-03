@@ -10,10 +10,40 @@ sub _id { 9 }
 
 sub _meta {
     return (
-        reqId    => 'int',
+        id       => {alias => 'reqId'},
         contract => 'Contract',
     );
 }
+
+sub _version { 6 }
+
+sub _serialize {
+    my ($self) = @_;
+
+    my $contract = $self->contract;
+
+    my @out = (
+        $self->_id,
+        $self->_version,
+        $self->id,
+        $contract->conId          || '',
+        $contract->symbol         || '',
+        $contract->secType        || '',
+        $contract->expiry         || '',
+        $contract->strike         || '',
+        $contract->right          || '',
+        $contract->multiplier     || '',
+        $contract->exchange       || '',
+        $contract->currency       || '',
+        $contract->localSymbol    || '',
+        $contract->includeExpired || '',
+        $contract->secIdType      || '',
+        $contract->secId          || '',
+    );
+
+    return @out;
+}
+
 
 1;
 

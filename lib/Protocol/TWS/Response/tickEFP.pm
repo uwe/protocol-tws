@@ -10,11 +10,11 @@ sub _id { 47 }
 
 sub _meta {
     return (
-        tickerId             => 'tickerId',
+        tickerId             => {alias => 'tickerId'},
         tickType             => 'tickType',
         basisPoints          => 'double',
         formattedBasisPoints => {},
-        totalDividends       => 'double',
+        impliedFuture        => 'double',
         holdDays             => 'int',
         futureExpiry         => {},
         dividendImpact       => 'double',

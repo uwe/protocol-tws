@@ -1,4 +1,4 @@
-package Protocol::TWS::Response::execDetailsEnd;
+package Protocol::TWS::Response::scannerParameters;
 
 use strict;
 use warnings;
@@ -6,11 +6,11 @@ use warnings;
 use base 'Protocol::TWS::Response';
 
 
-sub _id { 55 }
+sub _id { 19 }
 
 sub _meta {
     return (
-        id => {alias => 'reqId'},
+        xml => {},
     );
 }
 
