@@ -23,8 +23,7 @@ sub import {
         }
         foreach my $sub (@names) {
             my $full_name = join('::', $class, $sub);
-            warn "installing $full_name...";
-            *$full_name = sub { (shift)->{$name} };
+            *$full_name = sub { $_[0]->{$name} };
         }
     }
 }
@@ -51,7 +50,7 @@ sub _parse {
 
     ###TODO### check _lines?
 
-    my @meta = $class->_name;
+    my @meta = $class->_meta;
 
     my %data = ();
     while (@meta) {
