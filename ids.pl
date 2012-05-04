@@ -22,7 +22,13 @@ sub list_ids {
     my %id = ();
     foreach my $class (@classes) {
         $class =~ /${class_prefix}::(.+)/;
-        $id{$class->id} = $1;
+        my $name = $1;
+        my $id   = $class->_id;
+        if ($id{$id}) {
+            warn "ID $id conflict: $id{$id} vs. $name";
+        } else {
+            $id{$id} = $name;
+        }
     }
 
     foreach my $id (sort { $a <=> $b } keys %id) {

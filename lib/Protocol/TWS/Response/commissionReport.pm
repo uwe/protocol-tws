@@ -1,4 +1,4 @@
-package Protocl::TWS::Response::commissionReport;
+package Protocol::TWS::Response::commissionReport;
 
 use strict;
 use warnings;

@@ -23,6 +23,7 @@ sub import {
         }
         foreach my $sub (@names) {
             my $full_name = join('::', $class, $sub);
+            next if defined &{$full_name};
             *$full_name = sub {
                 if (@_ > 1) {
                     $_[0]->{$name} = $_[1];

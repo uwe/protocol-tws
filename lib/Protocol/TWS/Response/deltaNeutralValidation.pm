@@ -1,4 +1,4 @@
-package Protocl::TWS::Response::deltaNeutralValidation;
+package Protocol::TWS::Response::deltaNeutralValidation;
 
 use strict;
 use warnings;
