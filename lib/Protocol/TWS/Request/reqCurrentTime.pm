@@ -11,5 +11,11 @@ sub _id { 49 }
 sub _meta {
 }
 
+sub _response {
+    return (
+        currentTime => 'single',
+    );
+}
+
 1;
 

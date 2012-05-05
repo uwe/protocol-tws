@@ -4,6 +4,8 @@ use strict;
 use warnings;
 
 
+sub _response { }
+
 sub import {
     my ($class) = @_;
     return if $class eq __PACKAGE__;

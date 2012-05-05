@@ -17,5 +17,14 @@ sub _meta {
 
 sub _version { 2 }
 
+sub _response {
+    return (
+        updateAccountValue => 'cont',
+        updatePortfolio    => 'cont',
+        updateAccountTime  => 'cont',
+        accountDownloadEnd => 'end', ###TODO### cont
+    );
+}
+
 1;
 

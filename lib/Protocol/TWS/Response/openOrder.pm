@@ -26,10 +26,7 @@ sub _lines { 90 }
 sub _parse {
     my ($class, $version, $data) = @_;
 
-    my $lines = Protocol::TWS::Util::Lines->new(
-        data  => $data,
-        lines => $class->_lines,
-    );
+    my $lines = Protocol::TWS::Util::Lines->new($data, $class->_lines);
 
     my %data = (
         id => $data->[0],

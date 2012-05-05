@@ -36,6 +36,12 @@ sub new {
 }
 
 
+sub _name {
+    my ($class) = @_;
+
+    return (split /::/, ref($class) || $class)[-1];
+}
+
 sub _lines {
     my ($class) = @_;
 
