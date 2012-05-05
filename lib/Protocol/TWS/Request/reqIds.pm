@@ -1,4 +1,4 @@
-package Protocol::TWS::Request::reqIDs;
+package Protocol::TWS::Request::reqIds;
 
 use strict;
 use warnings;

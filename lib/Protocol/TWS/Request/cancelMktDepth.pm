@@ -10,7 +10,7 @@ sub _id { 11 }
 
 sub _meta {
     return (
-        id => 'tickerId',
+        id => {alias => 'tickerId'},
     );
 }
 

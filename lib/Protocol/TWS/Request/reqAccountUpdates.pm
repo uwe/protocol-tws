@@ -15,5 +15,7 @@ sub _meta {
     );
 }
 
+sub _version { 2 }
+
 1;
 

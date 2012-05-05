@@ -1,4 +1,4 @@
-package Protocol::TWS::Request::reqMktDataType;
+package Protocol::TWS::Request::reqMarketDataType;
 
 use strict;
 use warnings;
