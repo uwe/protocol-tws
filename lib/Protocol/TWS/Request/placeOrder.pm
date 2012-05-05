@@ -16,6 +16,10 @@ sub _meta {
     );
 }
 
+sub _response {
+    warn 'TODO';
+}
+
 sub _version { 38 }
 
 sub _serialize {

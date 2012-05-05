@@ -14,6 +14,8 @@ sub _meta {
     );
 }
 
+sub _response {}
+
 sub _version { 2 }
 
 

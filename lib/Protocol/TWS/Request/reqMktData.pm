@@ -17,6 +17,18 @@ sub _meta {
     );
 }
 
+sub _response {
+    my ($self) = @_;
+
+    my $type = $self->snapshot ? 'single' : 'cont';
+
+    return (
+        tickPrice => $type,
+        tickSize  => $type,
+        ###TODO### more responses?
+    );
+}
+
 sub _version { 9 }
 
 sub _serialize {

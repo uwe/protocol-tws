@@ -14,5 +14,11 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        updatedNewsBulletin => 'cont',
+    );
+}
+
 1;
 

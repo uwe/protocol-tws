@@ -16,6 +16,13 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        updateMktDepth   => 'cont',
+        updateMktDepthL2 => 'cont',
+    );
+}
+
 sub _version { 3 }
 
 sub _serialize {

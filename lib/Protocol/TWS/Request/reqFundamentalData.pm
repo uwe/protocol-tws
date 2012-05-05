@@ -16,6 +16,12 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        fundamentalData => 'single', ###TODO### cont ?
+    );
+}
+
 sub _serialize {
     my ($self) = @_;
 

@@ -18,6 +18,12 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        realTimeBar => 'cont',
+    );
+}
+
 sub _serialize {
     my ($self) = @_;
 

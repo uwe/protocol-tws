@@ -15,6 +15,13 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        execDetails    => 'cont',
+        execDetailsEnd => 'end',
+    );
+}
+
 sub _version { 3 }
 
 sub _serialize {

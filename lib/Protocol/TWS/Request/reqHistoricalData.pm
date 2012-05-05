@@ -21,6 +21,12 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        historicalData => 'single', ###TODO###
+    );
+}
+
 sub _version { 4 }
 
 sub _serialize {

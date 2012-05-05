@@ -15,6 +15,13 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        scannerData    => 'cont',
+        scannerDataEnd => 'end',
+     );
+}
+
 sub _version { 3 }
 
 sub _serialize {

@@ -14,5 +14,7 @@ sub _meta {
     );
 }
 
+sub _response {}
+
 1;
 

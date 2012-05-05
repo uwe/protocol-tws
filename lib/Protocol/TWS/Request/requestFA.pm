@@ -14,5 +14,11 @@ sub _meta {
     );
 }
 
+sub _response {
+     return (
+          receiveFA => 'single',
+     );
+}
+
 1;
 

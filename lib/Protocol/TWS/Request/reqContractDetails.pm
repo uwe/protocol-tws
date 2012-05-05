@@ -15,6 +15,13 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        contractDetails    => 'cont',
+        contractDetailsEnd => 'end',
+    );
+}
+
 sub _version { 6 }
 
 sub _serialize {

@@ -17,6 +17,12 @@ sub _meta {
     );
 }
 
+sub _response {
+    return (
+        tickOptionComputation => 'single',
+    );
+}
+
 sub _serialize {
     my ($self) = @_;
 

@@ -19,6 +19,10 @@ sub _meta {
     );
 }
 
+sub _response {
+    warn 'TODO';
+}
+
 sub _serialize {
     my ($self) = @_;
 
