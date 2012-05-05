@@ -47,12 +47,7 @@ sub _lines {
 sub _minimum_version { 1 }
 
 sub _parse {
-    my ($class, $version, $data) = @_;
-
-    # check lines
-    if (@$data < $class->_lines) {
-        die \($class->_lines);
-    }
+    my ($class, $version, $data, $lines) = @_;
 
     my @meta = $class->_meta;
 

@@ -23,5 +23,7 @@ sub _meta {
     );
 }
 
+sub _minimum_version { 6 }
+
 1;
 

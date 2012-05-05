@@ -18,7 +18,7 @@ sub _meta {
 
 sub _minimum_version { 9 }
 
-sub _lines { 22 }
+sub _lines { 27 }
 
 sub _parse {
     my ($class, $version, $data) = @_;
@@ -41,17 +41,22 @@ sub _parse {
     );
 
     my %execution = (
-        orderId     => $data->[1],
-        execId      => $data->[12],
-        time        => $data->[13],
-        acctNumber  => $data->[14],
-        exchange    => $data->[15],
-        side        => $data->[16],
-        shares      => $data->[17],
-        price       => $data->[18],
-        permId      => $data->[19],
-        clientId    => $data->[20],
-        liquidation => $data->[21],
+        orderId      => $data->[1],
+        execId       => $data->[12],
+        time         => $data->[13],
+        acctNumber   => $data->[14],
+        exchange     => $data->[15],
+        side         => $data->[16],
+        shares       => $data->[17],
+        price        => $data->[18],
+        permId       => $data->[19],
+        clientId     => $data->[20],
+        liquidation  => $data->[21],
+        cumQty       => $data->[22],
+        avgPrice     => $data->[23],
+        orderRef     => $data->[24],
+        evRule       => $data->[25],
+        evMultiplier => $data->[26],
     );
 
     $data{contract}  = Protocol::TWS::Struct::Contract->new(%contract);

@@ -5,6 +5,8 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Util::Lines;
+
 
 sub _id { 18 }
 
@@ -21,6 +23,11 @@ sub _lines { 30 }
 
 sub _parse {
     my ($class, $version, $data) = @_;
+
+    my $lines = Protocol::TWS::Util::Lines->new(
+        data  => $data,
+        lines => $class->_lines,
+    );
 
     my %data = (
         id => $data->[0],
@@ -63,9 +70,7 @@ sub _parse {
 
     my $sec_id_count = $data->[29];
     if ($sec_id_count > 0) {
-        if (@$data < 30 + 2 * $sec_id_count) {
-            die \(2 * $sec_id_count);
-        }
+        $lines->add(2 * $sec_id_count);
 
         my %sec_id = ();
         my $i = 30;

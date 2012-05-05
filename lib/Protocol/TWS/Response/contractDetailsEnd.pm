@@ -10,7 +10,7 @@ sub _id { 52 }
 
 sub _meta {
     return (
-        reqId => 'int',
+        id => {alias => 'reqId'},
     );
 }
 
