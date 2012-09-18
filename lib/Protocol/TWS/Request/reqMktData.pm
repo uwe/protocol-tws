@@ -78,8 +78,8 @@ sub _serialize {
     }
 
     push @out, (
-        $self->genericTicks || '',
-        $self->snapshot     || '',
+        $self->genericTicklist || '',
+        $self->snapshot        || '',
     );
 
     return @out;
