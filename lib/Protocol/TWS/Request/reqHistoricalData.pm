@@ -55,9 +55,9 @@ sub _serialize {
         $self->useRTH              || '',
         $self->whatToShow          || '',
         $self->formatDate          || '',
-    ); 
-    
-    if ($contract->secType eq 'BAG') { 
+    );
+
+    if ($contract->secType eq 'BAG') {
         my $combo_legs = $contract->comboLegs || [];
         push @out, scalar @$combo_legs;
         foreach my $leg (@$combo_legs) {
