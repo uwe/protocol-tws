@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct::Contract;
 
+# ABSTRACT: represent (basic) contract data
+
 use strict;
 use warnings;
 
@@ -22,11 +24,24 @@ sub _meta {
      includeExpired   => {type => 'bool',   default => 0},
      secIdType        => {},
      secId            => {},
-     comboLegs        => {type => 'array', subtype => 'TWS::ComboLeg'},
+     comboLegs        => {type => 'array', subtype => 'ComboLeg'},
      comboLegsDescrip => {},
      underComp        => {type => 'UnderComp'},
     );
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 DESCRIPTION
+
+This structure represents a contract (e. g. for orders or historical data).
+
+=head1 SEE ALSO
+
+L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/contract.htm>
+
+=cut

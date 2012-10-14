@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct::ComboLeg;
 
+# ABSTRACT: represent combo legs
+
 use strict;
 use warnings;
 
@@ -19,5 +21,36 @@ sub _meta {
     );
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 DESCRIPTION
+
+This structure is part of L<Protocol::TWS::Struct::Order>.
+
+=head1 INSTANCE VARIABLES
+
+=head2 conId
+
+=head2 ratio
+
+=head2 action
+
+=head2 exchange
+
+=head2 openClose
+
+=head2 shortSaleSlot
+
+=head2 designatedLocation
+
+=head2 exemptCode
+
+=head1 SEE ALSO
+
+L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/comboleg.htm>
+
+=cut

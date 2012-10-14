@@ -5,6 +5,8 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Struct::CommissionReport;
+
 
 sub _id { 59 }
 

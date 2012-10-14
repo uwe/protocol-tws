@@ -41,5 +41,65 @@ sub new {
     return bless \%arg, $class;
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Protocol::TWS::Struct - common structures
+
+=head1 SYNOPSIS
+
+  my $contract = Protocol::TWS::Struct::Contract->new(
+      symbol   => 'AAPL',
+      secType  => 'STK',
+      exchange => 'SMART',
+      currency => 'USD',
+  );
+
+=head1 DESCRIPTION
+
+Common structures are part of L<requests|Protocol::TWS::Request> and
+L<responses|Protocol::TWS::Response>. See
+L<SocketClient Propeties|http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/socketclient_properties.htm>.
+
+=head1 SUBCLASSES
+
+=over
+
+=item L<Protocol::TWS::Struct::BarData>
+
+=item L<Protocol::TWS::Struct::ComboLeg>
+
+=item L<Protocol::TWS::Struct::CommissionReport>
+
+=item L<Protocol::TWS::Struct::Contract>
+
+=item L<Protocol::TWS::Struct::ContractDetails>
+
+=item L<Protocol::TWS::Struct::Execution>
+
+=item L<Protocol::TWS::Struct::ExecutionFilter>
+
+=item L<Protocol::TWS::Struct::Order>
+
+=item L<Protocol::TWS::Struct::OrderComboLeg>
+
+=item L<Protocol::TWS::Struct::OrderState>
+
+=item L<Protocol::TWS::Struct::ScanData>
+
+=item L<Protocol::TWS::Struct::ScannerSubscription>
+
+=item L<Protocol::TWS::Struct::UnderComp>
+
+=back
+
+=head1 AUTHOR
+
+Uwe Voelker uwe@uwevoelker.de
+
+=cut

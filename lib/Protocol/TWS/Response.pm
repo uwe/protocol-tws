@@ -70,6 +70,107 @@ sub _parse {
     return $class->new(%data);
 }
 
-
 1;
 
+__END__
+
+=pod
+
+=head1 NAME
+
+Protocol::TWS::Response - API responses
+
+=head1 SYNOPSIS
+
+  my $request = Protocol::TWS::Request::reqCurrentTime->new;
+  $tws->call($request, sub {
+      my $response = shift;
+      print $response->time;
+  });
+
+=head1 DESCRIPTION
+
+Data structures for API responses. See
+L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/class_ewrapper_functions.htm>.
+
+=head1 SUBCLASSES
+
+=over
+
+=item L<Protocol::TWS::Response::accountDownloadEnd>
+
+=item L<Protocol::TWS::Response::bondContractDetails>
+
+=item L<Protocol::TWS::Response::commissionReport>
+
+=item L<Protocol::TWS::Response::contractDetails>
+
+=item L<Protocol::TWS::Response::contractDetailsEnd>
+
+=item L<Protocol::TWS::Response::currentTime>
+
+=item L<Protocol::TWS::Response::deltaNeutralValidation>
+
+=item L<Protocol::TWS::Response::error>
+
+=item L<Protocol::TWS::Response::execDetails>
+
+=item L<Protocol::TWS::Response::execDetailsEnd>
+
+=item L<Protocol::TWS::Response::fundamentalData>
+
+=item L<Protocol::TWS::Response::historicalData>
+
+=item L<Protocol::TWS::Response::managedAccounts>
+
+=item L<Protocol::TWS::Response::marketDataType>
+
+=item L<Protocol::TWS::Response::nextValidId>
+
+=item L<Protocol::TWS::Response::openOrder>
+
+=item L<Protocol::TWS::Response::openOrderEnd>
+
+=item L<Protocol::TWS::Response::orderStatus>
+
+=item L<Protocol::TWS::Response::reqalTimeBar>
+
+=item L<Protocol::TWS::Response::receiveFA>
+
+=item L<Protocol::TWS::Response::scannerData>
+
+=item L<Protocol::TWS::Response::scannerParameters>
+
+=item L<Protocol::TWS::Response::tickEFP>
+
+=item L<Protocol::TWS::Response::tickGeneric>
+
+=item L<Protocol::TWS::Response::tickOptionComputation>
+
+=item L<Protocol::TWS::Response::tickPrice>
+
+=item L<Protocol::TWS::Response::tickSize>
+
+=item L<Protocol::TWS::Response::tickSnapshotEnd>
+
+=item L<Protocol::TWS::Response::tickString>
+
+=item L<Protocol::TWS::Response::updateAccountTime>
+
+=item L<Protocol::TWS::Response::updateAccountValue>
+
+=item L<Protocol::TWS::Response::updateMktDepth>
+
+=item L<Protocol::TWS::Response::updateMktDepthL2>
+
+=item L<Protocol::TWS::Response::updateNewsBulletin>
+
+=item L<Protocol::TWS::Response::updatePortfolio>
+
+=back
+
+=head1 AUTHOR
+
+Uwe Voelker uwe@uwevoelker.de
+
+=cut

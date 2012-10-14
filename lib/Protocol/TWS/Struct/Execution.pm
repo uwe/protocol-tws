@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct::Execution;
 
+# ABSTRACT: represents an order execution
+
 use strict;
 use warnings;
 
@@ -25,5 +27,18 @@ sub _meta {
     );
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 DESCRIPTION
+
+This structure is part of L<Protocol::TWS::Response::execDetails>.
+
+=head1 SEE ALSO
+
+L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/execution.htm>
+
+=cut

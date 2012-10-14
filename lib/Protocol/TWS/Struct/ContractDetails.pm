@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct::ContractDetails;
 
+# ABSTRACT: represent (extended) contract data
+
 use strict;
 use warnings;
 
@@ -45,5 +47,30 @@ sub _meta {
     );
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 DESCRIPTION
+
+This structure represents extended contract data.
+
+It is used in:
+
+=over
+
+=item L<Protocol::TWS::Response::bondContractDetails>
+
+=item L<Protocol::TWS::Response::contractDetails>
+
+=item L<Protocol::TWS::Response::scannerData>
+
+=back
+
+=head1 SEE ALSO
+
+L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/contractdetails1.htm>
+
+=cut

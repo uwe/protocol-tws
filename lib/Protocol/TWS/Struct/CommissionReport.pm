@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct::CommissionReport;
 
+# ABSTRACT: represent a commission report
+
 use strict;
 use warnings;
 
@@ -17,5 +19,14 @@ sub _meta {
     );
 }
 
-
 1;
+
+__END__
+
+=pod
+
+=head1 DESCRIPTION
+
+This structure is part of L<Protocol::TWS::Response::commissionReport>.
+
+=cut
