@@ -1,5 +1,7 @@
 package Protocol::TWS::Request;
 
+# ABSTRACT: API requests
+
 use strict;
 use warnings;
 
@@ -67,13 +69,7 @@ sub _serialize {
 
 1;
 
-__END__
-
 =pod
-
-=head1 NAME
-
-Protocol::TWS::Request - API requests
 
 =head1 SYNOPSIS
 
@@ -162,9 +158,5 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 =item L<Protocol::TWS::Request::setServerLogLevel>
 
 =back
-
-=head1 AUTHOR
-
-Uwe Voelker uwe@uwevoelker.de
 
 =cut

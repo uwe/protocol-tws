@@ -1,5 +1,7 @@
 package Protocol::TWS::Response;
 
+# ABSTRACT: API responses
+
 use strict;
 use warnings;
 
@@ -72,13 +74,7 @@ sub _parse {
 
 1;
 
-__END__
-
 =pod
-
-=head1 NAME
-
-Protocol::TWS::Response - API responses
 
 =head1 SYNOPSIS
 
@@ -168,9 +164,5 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 =item L<Protocol::TWS::Response::updatePortfolio>
 
 =back
-
-=head1 AUTHOR
-
-Uwe Voelker uwe@uwevoelker.de
 
 =cut

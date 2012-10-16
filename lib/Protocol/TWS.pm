@@ -1,5 +1,7 @@
 package Protocol::TWS;
 
+# ABSTRACT: protocol support for InteractiveBrokers Trader Workstation (TWS) API
+
 use strict;
 use warnings;
 
@@ -20,13 +22,7 @@ sub response_by_id {
 
 1;
 
-__END__
-
 =pod
-
-=head1 NAME
-
-Protocol::TWS - protocol support for InteractiveBrokers Trader Workstation (TWS) API
 
 =head1 DESCRIPTION
 
@@ -244,9 +240,5 @@ Also, if you have any examples that I can include, I would appreciate it.
 L<http://www.interactivebrokers.com/en/p.php?f=programInterface>,
 L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/c.htm>,
 L<AnyEvent::TWS>, L<Finance::TWS::Simple>
-
-=head1 AUTHOR
-
-Uwe Voelker uwe@uwevoelker.de
 
 =cut

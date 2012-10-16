@@ -1,5 +1,7 @@
 package Protocol::TWS::Struct;
 
+# ABSTRACT: common structures
+
 use strict;
 use warnings;
 
@@ -43,13 +45,7 @@ sub new {
 
 1;
 
-__END__
-
 =pod
-
-=head1 NAME
-
-Protocol::TWS::Struct - common structures
 
 =head1 SYNOPSIS
 
@@ -97,9 +93,5 @@ L<SocketClient Propeties|http://www.interactivebrokers.com/php/apiUsersGuide/api
 =item L<Protocol::TWS::Struct::UnderComp>
 
 =back
-
-=head1 AUTHOR
-
-Uwe Voelker uwe@uwevoelker.de
 
 =cut
