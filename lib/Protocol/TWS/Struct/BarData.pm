@@ -9,7 +9,7 @@ use base 'Protocol::TWS::Struct';
 
 
 sub _meta {
-    return (
+    (
         date     => {},
         open     => 'double',
         high     => 'double',

@@ -7,7 +7,7 @@ use base 'Protocol::TWS::Struct';
 
 
 sub _meta {
-    return (
+    (
         contract   => 'ContractDetails',
         rank       => 'int',
         distance   => {},

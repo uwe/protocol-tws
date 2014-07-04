@@ -1,0 +1,102 @@
+calculateImpliedVolatility
+- id
+- tickOptionComputation (only impliedVol set)
+
+calculateOptionPrice
+- id
+- tickOptionComputation (optPrice and greeks set)
+
+cancelCalculateImpliedVolatility
+- id
+- no response
+
+cancelCalculateOptionPrice
+- id
+- no response
+
+cancelFundamentalData
+- id
+- no response
+
+cancelHistoricalData
+- id
+- no response
+
+cancelMktData
+- id
+- no response
+
+cancelMktDepth
+- id
+- no response
+
+cancelNewsBulletins
+- no response
+
+cancelOrder
+- id
+- ???
+
+cancelRealTimeBars
+- id
+- no response
+
+cancelScannerSubscription
+- id
+- no response
+
+exerciseOptions
+- id
+- ???
+
+placeOrder
+- id
+- ???
+
+replaceFA
+- ???
+
+reqAccountUpdates
+- global subscription (on/off)
+- updateAccountValue, updatePortfolio, updateAccountTime, accountDownloadEnd
+
+reqAllOpenOrders
+
+reqAutoOpenOrders
+
+reqContractDetails
+
+reqCurrentTime
+
+reqExecutions
+
+reqFundamentalData
+
+reqGlobalCancel
+
+reqHistoricalData
+
+reqIds
+
+reqManagedAccts
+
+reqMarketDataType
+
+reqMktData
+
+reqMktDepth
+
+reqNewsBulletins
+
+reqOpenOrders
+
+reqRealTimeBars
+
+reqScannerParameters
+
+reqScannerSubscription
+
+requestFA
+
+setServerLogLevel
+
