@@ -20,12 +20,14 @@ sub _meta {
 sub _response {
     my ($self) = @_;
 
-    my $type = $self->snapshot ? 'single' : 'cont';
-
     return (
-        tickPrice => $type,
-        tickSize  => $type,
-        ###TODO### more responses?
+        tickEFP               => 'cont',
+        tickGeneric           => 'cont',
+        tickOptionComputation => 'cont',
+        tickPrice             => 'cont',
+        tickSize              => 'cont',
+        tickSnapshotEnd       => 'end',
+        tickString            => 'cont',
     );
 }
 
