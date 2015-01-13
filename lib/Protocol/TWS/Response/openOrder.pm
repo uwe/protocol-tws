@@ -19,91 +19,101 @@ sub _meta {
     );
 }
 
-sub _minimum_version { 30 }
+sub _minimum_version { 32 }
 
-sub _lines { 90 }
+sub _lines { 96 }
 
 sub _parse {
     my ($class, $version, $data) = @_;
 
     my $lines = Protocol::TWS::Util::Lines->new($data, $class->_lines);
 
+    my $i = 0;
     my %data = (
-        id => $data->[0],
+        id => $data->[$i++],
     );
 
     my %contract = (
-        conId       => $data->[1],
-        symbol      => $data->[2],
-        secType     => $data->[3],
-        expiry      => $data->[4],
-        strike      => $data->[5],
-        right       => $data->[6],
-        exchange    => $data->[7],
-        currency    => $data->[8],
-        localSymbol => $data->[9],
+        conId        => $data->[$i++],
+        symbol       => $data->[$i++],
+        secType      => $data->[$i++],
+        expiry       => $data->[$i++],
+        strike       => $data->[$i++],
+        right        => $data->[$i++],
+        multiplier   => $data->[$i++],
+        exchange     => $data->[$i++],
+        currency     => $data->[$i++],
+        localSymbol  => $data->[$i++],
+        tradingClass => $data->[$i++],
     );
 
     my %order = (
-        action                => $data->[10],
-        totalQuantity         => $data->[11],
-        orderType             => $data->[12],
-        lmtPrice              => $data->[13],
-        auxPrice              => $data->[14],
-        tif                   => $data->[15],
-        ocaGroup              => $data->[16],
-        accout                => $data->[17],
-        openClose             => $data->[18],
-        origin                => $data->[19],
-        orderRef              => $data->[20],
-        clientId              => $data->[21],
-        permId                => $data->[22],
-        outsideRth            => $data->[23],
-        hidden                => $data->[24],
-        discretionaryAmt      => $data->[25],
-        goodAfterTime         => $data->[26],
-        faGroup               => $data->[28],
-        faMethod              => $data->[29],
-        faPercentage          => $data->[30],
-        faProfile             => $data->[31],
-        goodTillDate          => $data->[32],
-        rule80A               => $data->[33],
-        percentOffset         => $data->[34],
-        settlingFirm          => $data->[35],
-        shortSaleSlot         => $data->[36],
-        designatedLocation    => $data->[37],
-        exemptCode            => $data->[38],
-        auctionStrategy       => $data->[39],
-        startingPrice         => $data->[40],
-        stockRefPrice         => $data->[41],
-        delta                 => $data->[42],
-        stockRangeLower       => $data->[43],
-        stockRangeUpper       => $data->[44],
-        displaySize           => $data->[45],
-        blockOrder            => $data->[46],
-        sweepToFill           => $data->[47],
-        allOrNone             => $data->[48],
-        minQty                => $data->[49],
-        ocaType               => $data->[50],
-        eTradeOnly            => $data->[51],
-        firmQuoteOnly         => $data->[52],
-        nbboPriceCap          => $data->[53],
-        parentId              => $data->[54],
-        triggerMethod         => $data->[55],
-        volatility            => $data->[56],
-        volatilityType        => $data->[57],
-        deltaNeutralOrderType => $data->[58],
-        deltaNeutralAuxPrice  => $data->[59],
+        action                => $data->[$i++],
+        totalQuantity         => $data->[$i++],
+        orderType             => $data->[$i++],
+        lmtPrice              => $data->[$i++],
+        auxPrice              => $data->[$i++],
+        tif                   => $data->[$i++],
+        ocaGroup              => $data->[$i++],
+        accout                => $data->[$i++],
+        openClose             => $data->[$i++],
+        origin                => $data->[$i++],
+        orderRef              => $data->[$i++],
+        clientId              => $data->[$i++],
+        permId                => $data->[$i++],
+        outsideRth            => $data->[$i++],
+        hidden                => $data->[$i++],
+        discretionaryAmt      => $data->[$i++],
+        goodAfterTime         => $data->[$i++],
+        sharesAllocation      => $data->[$i++], # deprecated
+        faGroup               => $data->[$i++],
+        faMethod              => $data->[$i++],
+        faPercentage          => $data->[$i++],
+        faProfile             => $data->[$i++],
+        goodTillDate          => $data->[$i++],
+        rule80A               => $data->[$i++],
+        percentOffset         => $data->[$i++],
+        settlingFirm          => $data->[$i++],
+        shortSaleSlot         => $data->[$i++],
+        designatedLocation    => $data->[$i++],
+        exemptCode            => $data->[$i++],
+        auctionStrategy       => $data->[$i++],
+        startingPrice         => $data->[$i++],
+        stockRefPrice         => $data->[$i++],
+        delta                 => $data->[$i++],
+        stockRangeLower       => $data->[$i++],
+        stockRangeUpper       => $data->[$i++],
+        displaySize           => $data->[$i++],
+        blockOrder            => $data->[$i++],
+        sweepToFill           => $data->[$i++],
+        allOrNone             => $data->[$i++],
+        minQty                => $data->[$i++],
+        ocaType               => $data->[$i++],
+        eTradeOnly            => $data->[$i++],
+        firmQuoteOnly         => $data->[$i++],
+        nbboPriceCap          => $data->[$i++],
+        parentId              => $data->[$i++],
+        triggerMethod         => $data->[$i++],
+        volatility            => $data->[$i++],
+        volatilityType        => $data->[$i++],
+        deltaNeutralOrderType => $data->[$i++],
+        deltaNeutralAuxPrice  => $data->[$i++],
     );
 
-    my $i = 60;
-    if ($order{deltaNeutralOrderType}) {
-        $lines->add(4);
+    # deprecated
+    delete $order{sharesAllocation};
 
+    if ($order{deltaNeutralOrderType}) {
         $order{deltaNeutralConId}           = $data->[$i++];
         $order{deltaNeutralSettlingFirm}    = $data->[$i++];
         $order{detlaNeutralClearingAccount} = $data->[$i++];
         $order{deltaNeutralClearingIntent}  = $data->[$i++];
+    }
+    else {
+        $order{deltaNeutralOpenClose}          = $data->[$i++];
+        $order{deltaNeutralShortSale}          = $data->[$i++];
+        $order{deltaNeutralShortSaleSlot}      = $data->[$i++];
+        $order{deltaNeutralDesignatedLocation} = $data->[$i++];
     }
 
     $order{continuousUpdate}   = $data->[$i++];

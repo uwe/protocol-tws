@@ -22,7 +22,7 @@ sub _response {
     );
 }
 
-sub _version { 6 }
+sub _version { 7 }
 
 sub _serialize {
     my ($self) = @_;
@@ -43,6 +43,7 @@ sub _serialize {
         $contract->exchange       || '',
         $contract->currency       || '',
         $contract->localSymbol    || '',
+        $contract->tradingClass   || '',
         $contract->includeExpired || '',
         $contract->secIdType      || '',
         $contract->secId          || '',

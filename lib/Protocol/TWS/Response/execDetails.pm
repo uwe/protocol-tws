@@ -16,47 +16,50 @@ sub _meta {
     );
 }
 
-sub _minimum_version { 9 }
+sub _minimum_version { 10 }
 
-sub _lines { 27 }
+sub _lines { 28 }
 
 sub _parse {
     my ($class, $version, $data) = @_;
 
     my %data = (
-        id => $data->[0],
+        id => shift @$data
     );
 
+    my $order_id = shift @$data;
+
     my %contract = (
-        condId      => $data->[2],
-        symbol      => $data->[3],
-        secType     => $data->[4],
-        expiry      => $data->[5],
-        strike      => $data->[6],
-        right       => $data->[7],
-        multiplier  => $data->[8],
-        exchange    => $data->[9],
-        currency    => $data->[10],
-        localSymbol => $data->[11],
+        condId       => shift @$data,
+        symbol       => shift @$data,
+        secType      => shift @$data,
+        expiry       => shift @$data,
+        strike       => shift @$data,
+        right        => shift @$data,
+        multiplier   => shift @$data,
+        exchange     => shift @$data,
+        currency     => shift @$data,
+        localSymbol  => shift @$data,
+        tradingClass => shift @$data,
     );
 
     my %execution = (
-        orderId      => $data->[1],
-        execId       => $data->[12],
-        time         => $data->[13],
-        acctNumber   => $data->[14],
-        exchange     => $data->[15],
-        side         => $data->[16],
-        shares       => $data->[17],
-        price        => $data->[18],
-        permId       => $data->[19],
-        clientId     => $data->[20],
-        liquidation  => $data->[21],
-        cumQty       => $data->[22],
-        avgPrice     => $data->[23],
-        orderRef     => $data->[24],
-        evRule       => $data->[25],
-        evMultiplier => $data->[26],
+        orderId      => $order_id,
+        execId       => shift @$data,
+        time         => shift @$data,
+        acctNumber   => shift @$data,
+        exchange     => shift @$data,
+        side         => shift @$data,
+        shares       => shift @$data,
+        price        => shift @$data,
+        permId       => shift @$data,
+        clientId     => shift @$data,
+        liquidation  => shift @$data,
+        cumQty       => shift @$data,
+        avgPrice     => shift @$data,
+        orderRef     => shift @$data,
+        evRule       => shift @$data,
+        evMultiplier => shift @$data,
     );
 
     $data{contract}  = Protocol::TWS::Struct::Contract->new(%contract);

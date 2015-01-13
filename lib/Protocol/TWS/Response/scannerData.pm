@@ -39,20 +39,21 @@ sub _parse {
             );
 
             my %contract = (
-                conId       => $data->[$i++],
-                symbol      => $data->[$i++],
-                secType     => $data->[$i++],
-                expiry      => $data->[$i++],
-                strike      => $data->[$i++],
-                right       => $data->[$i++],
-                exchange    => $data->[$i++],
-                currency    => $data->[$i++],
-                localSymbol => $data->[$i++],
+                conId        => $data->[$i++],
+                symbol       => $data->[$i++],
+                secType      => $data->[$i++],
+                expiry       => $data->[$i++],
+                strike       => $data->[$i++],
+                right        => $data->[$i++],
+                exchange     => $data->[$i++],
+                currency     => $data->[$i++],
+                localSymbol  => $data->[$i++],
+                marketName   => $data->[$i++], # belongs to contract_details
+                tradingClass => $data->[$i++],
             );
 
             my %contract_details = (
-                marketName   => $data->[$i++],
-                tradingClass => $data->[$i++],
+                marketName => delete $contract{marketName},
             );
 
             $contract_details{summary} = Protocol::TWS::Struct::Contract->new(%contract);

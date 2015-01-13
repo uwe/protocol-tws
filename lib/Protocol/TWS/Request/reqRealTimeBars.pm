@@ -10,11 +10,12 @@ sub _id { 50 }
 
 sub _meta {
     return (
-        id         => {alias => 'tickerId'},
-        contract   => 'Contract',
-        barSize    => 'int',
-        whatToShow => {},
-        useRTH     => 'bool',
+        id                  => {alias => 'tickerId'},
+        contract            => 'Contract',
+        barSize             => 'int',
+        whatToShow          => {},
+        useRTH              => 'bool',
+        realTimeBarsOptions => {},
     );
 }
 
@@ -23,6 +24,8 @@ sub _response {
         realTimeBar => 'cont',
     );
 }
+
+sub _version { 3 }
 
 sub _serialize {
     my ($self) = @_;
@@ -33,6 +36,7 @@ sub _serialize {
         $self->_id,
         $self->_version,
         $self->id,
+        $contract->conId           || '',
         $contract->symbol          || '',
         $contract->secType         || '',
         $contract->expiry          || '',
@@ -43,9 +47,11 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
         $self->barSize             || '',
         $self->whatToShow          || '',
         $self->useRTH              || '',
+        $self->realTimeBarsOptions || '',
     );
 
     return @out;

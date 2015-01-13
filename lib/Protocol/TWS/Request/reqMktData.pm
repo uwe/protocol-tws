@@ -14,6 +14,7 @@ sub _meta {
         contract        => 'Contract',
         genericTicklist => {},
         snapshot        => 'bool',
+        mktDataOptions  => {},
     );
 }
 
@@ -26,12 +27,12 @@ sub _response {
         tickOptionComputation => 'cont',
         tickPrice             => 'cont',
         tickSize              => 'cont',
-        tickSnapshotEnd       => 'end',
         tickString            => 'cont',
+        tickSnapshotEnd       => 'end',
     );
 }
 
-sub _version { 9 }
+sub _version { 11 }
 
 sub _serialize {
     my ($self) = @_;
@@ -53,6 +54,7 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
     );
 
     if ($contract->secType eq 'BAG') {
@@ -82,6 +84,7 @@ sub _serialize {
     push @out, (
         $self->genericTicklist || '',
         $self->snapshot        || '',
+        $self->mktDataOptions  || '',
     );
 
     return @out;

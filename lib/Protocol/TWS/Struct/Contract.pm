@@ -21,6 +21,7 @@ sub _meta {
      primaryExchange  => {},
      currency         => {},
      localSymbol      => {},
+     tradingClass     => {},
      includeExpired   => {type => 'bool',   default => 0},
      secIdType        => {},
      secId            => {},
@@ -85,6 +86,10 @@ Currency (also to avoid ambiguity), e. g. C<USD>.
 =head2 localSymbol
 
 Local symbol.
+
+=head2 tradingClass
+
+Trading class name.
 
 =head2 includeExpired
 

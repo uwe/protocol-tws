@@ -12,7 +12,6 @@ sub _meta {
     (
      summary           => {type => 'Contract'},
      marketName        => {},
-     tradingClass      => {},
      minTick           => {type => 'double', default => 0},
      orderTypes        => {},
      validExchanges    => {},

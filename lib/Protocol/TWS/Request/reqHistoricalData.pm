@@ -18,6 +18,7 @@ sub _meta {
         whatToShow     => {},
         useRTH         => 'int',
         formatDate     => 'int',
+        chartOptions   => {},
     );
 }
 
@@ -27,7 +28,7 @@ sub _response {
     );
 }
 
-sub _version { 4 }
+sub _version { 6 }
 
 sub _serialize {
     my ($self) = @_;
@@ -38,6 +39,7 @@ sub _serialize {
         $self->_id,
         $self->_version,
         $self->id,
+        $contract->conId           || '',
         $contract->symbol          || '',
         $contract->secType         || '',
         $contract->expiry          || '',
@@ -48,6 +50,7 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
         $contract->includeExpired  || '',
         $self->endDateTime         || '',
         $self->barSizeSetting      || '',
@@ -55,6 +58,7 @@ sub _serialize {
         $self->useRTH              || '',
         $self->whatToShow          || '',
         $self->formatDate          || '',
+        $self->chartOptions        || '',
     );
 
     if ($contract->secType eq 'BAG') {

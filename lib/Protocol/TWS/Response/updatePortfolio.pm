@@ -21,7 +21,7 @@ sub _meta {
     );
 }
 
-sub _minimum_version { 7 }
+sub _minimum_version { 8 }
 
 sub _lines { 17 }
 
@@ -39,6 +39,7 @@ sub _parse {
         primaryExchange => shift @$data,
         currency        => shift @$data,
         localSymbol     => shift @$data,
+        tradingClass    => shift @$data,
     );
     
     my %data = (

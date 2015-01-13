@@ -10,7 +10,7 @@ sub _id { 54 }
 
 sub _meta {
     return (
-        id          => {alias => 'reqid'},
+        id          => {alias => 'reqId'},
         contract    => 'Contract',
         optionPrice => 'double',
         underPrice  => 'double',
@@ -22,6 +22,8 @@ sub _response {
         tickOptionComputation => 'single',
     );
 }
+
+sub _version { 2 }
 
 sub _serialize {
     my ($self) = @_;
@@ -43,6 +45,7 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
         $self->optionPrice         || '',
         $self->underPrice          || '',
     );

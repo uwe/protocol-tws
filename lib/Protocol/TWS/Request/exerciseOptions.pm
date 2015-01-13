@@ -23,6 +23,8 @@ sub _response {
     warn 'TODO';
 }
 
+sub _version { 2 }
+
 sub _serialize {
     my ($self) = @_;
 
@@ -32,6 +34,7 @@ sub _serialize {
         $self->_id,
         $self->_version,
         $self->id,
+        $contract->conId           || '',
         $contract->symbol          || '',
         $contract->secType         || '',
         $contract->expiry          || '',
@@ -42,6 +45,7 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
         $self->exerciseAction      || '',
         $self->exerciseQuantity    || '',
         $self->account             || '',

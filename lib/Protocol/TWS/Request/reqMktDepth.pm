@@ -10,9 +10,10 @@ sub _id { 10 }
 
 sub _meta {
     return (
-        id       => {alias => 'tickerId'},
-        contract => 'Contract',
-        numRows  => 'int',
+        id              => {alias => 'tickerId'},
+        contract        => 'Contract',
+        numRows         => 'int',
+        mktDepthOptions => {},
     );
 }
 
@@ -23,7 +24,7 @@ sub _response {
     );
 }
 
-sub _version { 3 }
+sub _version { 5 }
 
 sub _serialize {
     my ($self) = @_;
@@ -34,16 +35,19 @@ sub _serialize {
         $self->_id,
         $self->_version,
         $self->id,
-        $contract->symbol      || '',
-        $contract->secType     || '',
-        $contract->expiry      || '',
-        $contract->strike      || '',
-        $contract->right       || '',
-        $contract->multiplier  || '',
-        $contract->exchange    || '',
-        $contract->currency    || '',
-        $contract->localSymbol || '',
-        $self->numRows         || '',
+        $contract->conId        || '',
+        $contract->symbol       || '',
+        $contract->secType      || '',
+        $contract->expiry       || '',
+        $contract->strike       || '',
+        $contract->right        || '',
+        $contract->multiplier   || '',
+        $contract->exchange     || '',
+        $contract->currency     || '',
+        $contract->localSymbol  || '',
+        $contract->tradingClass || '',
+        $self->numRows          || '',
+        $self->mktDepthOptions  || '',
     );
 
     return @out;

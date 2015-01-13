@@ -20,7 +20,7 @@ sub _response {
     warn 'TODO';
 }
 
-sub _version { 38 }
+sub _version { 42 }
 
 sub _serialize {
     my ($self) = @_;
@@ -43,6 +43,7 @@ sub _serialize {
         $contract->primaryExchange || '',
         $contract->currency        || '',
         $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
         $contract->secIdType       || '',
         $contract->secId           || '',
         $order->action             || '',
@@ -136,6 +137,14 @@ sub _serialize {
             $order->deltaNeutralClearingIntent  || '',
         );
     }
+    else {
+        push @out, (
+            $order->deltaNeutralOpenClose          || '',
+            $order->deltaNeutralShortSale          || '',
+            $order->deltaNeutralShortSaleSlot      || '',
+            $order->deltaNeutralDesignatedLocation || '',
+        );
+    }
 
     push @out, (
         $order->continuousUpdate    || '',
@@ -159,7 +168,12 @@ sub _serialize {
         );
     }
 
-    push @out, $order->hedgeType || '',;
+    push @out, (
+        $order->scaleTable      || '',
+        $order->activeStartTime || '',
+        $order->activeStopTime  || '',
+        $order->hedgeType       || '',
+    );
 
     if ($order->hedgeType) {
         push @out, $order->hedgeParam || '',;
@@ -193,7 +207,10 @@ sub _serialize {
         }
     }
 
-    push @out, $order->whatIf || '',;
+    push @out, (
+        $order->whatIf           || '',
+        $order->orderMiscOptions || '',
+    );
 
     return @out;
 }

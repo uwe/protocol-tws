@@ -31,11 +31,12 @@ sub _parse {
     );
 
     my %contract = (
-        symbol   => $data->[1],
-        secType  => $data->[2],
-        exchange => $data->[14],
-        currency => $data->[15],
-        conId    => $data->[18],
+        symbol       => $data->[1],
+        secType      => $data->[2],
+        exchange     => $data->[14],
+        currency     => $data->[15],
+        tradingClass => $data->[17],
+        conId        => $data->[18],
     );
 
     my %contract_details = (
@@ -51,7 +52,6 @@ sub _parse {
         putable           => $data->[12],
         descAppend        => $data->[13],
         marketName        => $data->[16],
-        tradingClass      => $data->[17],
         minTick           => $data->[19],
         orderTypes        => $data->[20],
         validExchanges    => $data->[21],

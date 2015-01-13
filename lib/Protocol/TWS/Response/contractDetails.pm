@@ -39,6 +39,7 @@ sub _parse {
         exchange        => $data->[6],
         currency        => $data->[7],
         localSymbol     => $data->[8],
+        tradingClass    => $data->[10],
         conId           => $data->[11],
         multiplier      => $data->[13],
         primaryExchange => $data->[19],
@@ -46,7 +47,6 @@ sub _parse {
 
     my %contract_details = (
         marketName      => $data->[9],
-        tradingClass    => $data->[10],
         minTick         => $data->[12],
         orderTypes      => $data->[14],
         validExchanges  => $data->[15],
