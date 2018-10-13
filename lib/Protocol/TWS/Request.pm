@@ -89,6 +89,8 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Request::calculateOptionPrice>
 
+=item L<Protocol::TWS::Request::cancelAccountSummary>
+
 =item L<Protocol::TWS::Request::cancelCalculateImpliedVolatility>
 
 =item L<Protocol::TWS::Request::cancelCalculateOptionPrice>
@@ -105,6 +107,8 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Request::cancelOrder>
 
+=item L<Protocol::TWS::Request::cancelPositions>
+
 =item L<Protocol::TWS::Request::cancelRealTimeBars>
 
 =item L<Protocol::TWS::Request::cancelScannerSubscription>
@@ -113,7 +117,11 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Request::placeOrder>
 
+=item L<Protocol::TWS::Request::queryDisplayGroups>
+
 =item L<Protocol::TWS::Request::replaceFA>
+
+=item L<Protocol::TWS::Request::reqAccountSummary>
 
 =item L<Protocol::TWS::Request::reqAccountUpdates>
 
@@ -147,6 +155,8 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Request::reqOpenOrders>
 
+=item L<Protocol::TWS::Request::reqPositions>
+
 =item L<Protocol::TWS::Request::reqRealTimeBars>
 
 =item L<Protocol::TWS::Request::reqScannerParameters>
@@ -156,6 +166,18 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 =item L<Protocol::TWS::Request::requestFA>
 
 =item L<Protocol::TWS::Request::setServerLogLevel>
+
+=item L<Protocol::TWS::Request::startApi>
+
+=item L<Protocol::TWS::Request::subscribeToGroupEvents>
+
+=item L<Protocol::TWS::Request::unsubscribeFromGroupEvents>
+
+=item L<Protocol::TWS::Request::updateDisplayGroup>
+
+=item L<Protocol::TWS::Request::verifyMessage>
+
+=item L<Protocol::TWS::Request::verifyRequest>
 
 =back
 

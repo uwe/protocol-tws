@@ -95,6 +95,10 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Response::accountDownloadEnd>
 
+=item L<Protocol::TWS::Response::accountSummary>
+
+=item L<Protocol::TWS::Response::accountSummaryEnd>
+
 =item L<Protocol::TWS::Response::bondContractDetails>
 
 =item L<Protocol::TWS::Response::commissionReport>
@@ -106,6 +110,10 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 =item L<Protocol::TWS::Response::currentTime>
 
 =item L<Protocol::TWS::Response::deltaNeutralValidation>
+
+=item L<Protocol::TWS::Response::displayGroupList>
+
+=item L<Protocol::TWS::Response::displayGroupUpdated>
 
 =item L<Protocol::TWS::Response::error>
 
@@ -129,7 +137,11 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 
 =item L<Protocol::TWS::Response::orderStatus>
 
-=item L<Protocol::TWS::Response::reqalTimeBar>
+=item L<Protocol::TWS::Response::position>
+
+=item L<Protocol::TWS::Response::positionEnd>
+
+=item L<Protocol::TWS::Response::realTimeBar>
 
 =item L<Protocol::TWS::Response::receiveFA>
 
@@ -162,6 +174,10 @@ L<http://www.interactivebrokers.com/php/apiUsersGuide/apiguide.htm#apiguide/c/cl
 =item L<Protocol::TWS::Response::updateNewsBulletin>
 
 =item L<Protocol::TWS::Response::updatePortfolio>
+
+=item L<Protocol::TWS::Response::verifyCompleted>
+
+=item L<Protocol::TWS::Response::verifyMessageAPI>
 
 =back
 
