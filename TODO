@@ -1,3 +1,6 @@
 - consume $data
 - validation
 
+- ENCODE_TAGVALUELIST
+
+- Position.pm -> PositionData.pm ?

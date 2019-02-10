@@ -5,6 +5,9 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Struct::BarData;
+use Protocol::TWS::Util::Lines;
+
 
 sub _id { 17 }
 
@@ -57,4 +60,3 @@ sub _parse {
 
 
 1;
-

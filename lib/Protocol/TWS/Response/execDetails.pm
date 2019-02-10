@@ -5,6 +5,9 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Struct::Contract;
+use Protocol::TWS::Struct::Execution;
+
 
 sub _id { 11 }
 
@@ -71,4 +74,3 @@ sub _parse {
 
 
 1;
-

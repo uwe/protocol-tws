@@ -18,7 +18,7 @@ my $TICK_TYPE = {
     10 => 'bidOptComp',
     11 => 'askOptComp',
     12 => 'lastOptComp',
-    13 => 'modelOptComp'
+    13 => 'modelOptComp',
     14 => 'open',
     15 => '13WeekLow',
     16 => '13WeekHigh',
@@ -62,7 +62,7 @@ my $TICK_TYPE = {
     54 => 'trades',
     55 => 'trades/min',
     56 => 'volume/min',
-    57 => 'lastRTHTrade'
+    57 => 'lastRTHTrade',
     58 => 'RTHistoricalVol',
 
     61 => 'regulatoryImbalance',
@@ -76,4 +76,3 @@ sub get_field {
 }
 
 1;
-

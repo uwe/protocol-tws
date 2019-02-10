@@ -5,6 +5,8 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Struct::Contract;
+use Protocol::TWS::Struct::ContractDetails;
 use Protocol::TWS::Util::Lines;
 
 
@@ -86,4 +88,3 @@ sub _parse {
 
 
 1;
-

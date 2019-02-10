@@ -51,10 +51,8 @@ sub _serialize {
 
     my @meta = $self->_meta;
 
-    my @out = (
-        $self->_id,
-        $self->_version,
-    );
+    my @out = ($self->_id);
+    push @out, $self->_version if $self->_version;
     while (@meta) {
         my $name = shift @meta;
         my $meta = shift @meta;
@@ -65,6 +63,28 @@ sub _serialize {
     }
 
     return @out;
+}
+
+sub _serialize_contract {
+    my ($self) = @_;
+
+    my $contract = $self->contract;
+
+    return (
+        $contract->conId           || '',
+        $contract->symbol          || '',
+        $contract->secType         || '',
+        $contract->expiry          || '',
+        $contract->strike          || '',
+        $contract->right           || '',
+        $contract->multiplier      || '',
+        $contract->exchange        || '',
+        $contract->primaryExchange || '',
+        $contract->currency        || '',
+        $contract->localSymbol     || '',
+        $contract->tradingClass    || '',
+        $contract->includeExpired  || '',
+    );
 }
 
 1;

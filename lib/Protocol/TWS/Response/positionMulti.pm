@@ -1,27 +1,24 @@
-package Protocol::TWS::Response::position;
+package Protocol::TWS::Response::positionMulti;
 
 use strict;
 use warnings;
 
 use base 'Protocol::TWS::Response';
 
-use Protocol::TWS::Struct::Contract;
 
-
-sub _id { 61 }
+sub _id { 71 }
 
 sub _meta {
     return (
-        account  => {},
-        contract => 'Contract',
-        position => 'int',
-        avgCost  => 'double',
+        account   => {},
+        modelCode => {},
+        contract  => 'Contract',
+        position  => 'double',
+        avgCost   => 'double',
     );
 }
 
-sub _minimum_version { 3 }
-
-sub _lines { 14 }
+sub _lines { 15 }
 
 sub _parse {
     my ($class, $version, $data) = @_;
@@ -43,10 +40,11 @@ sub _parse {
     );
 
     my %data = (
-        account  => $account,
-        contract => Protocol::TWS::Struct::Contract->new(%contract),
-        position => shift @$data,
-        avgCost  => shift @$data,
+        account   => $account,
+        contract  => Protocol::TWS::Struct::Contract->new(%contract),
+        position  => shift @$data,
+        avgCost   => shift @$data,
+        modelCode => shift @$data,
     );
 
     return $class->new(%data);

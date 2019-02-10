@@ -5,6 +5,8 @@ use warnings;
 
 use base 'Protocol::TWS::Response';
 
+use Protocol::TWS::Struct::Contract;
+
 
 sub _id { 7 }
 
@@ -41,7 +43,7 @@ sub _parse {
         localSymbol     => shift @$data,
         tradingClass    => shift @$data,
     );
-    
+
     my %data = (
         contract      => Protocol::TWS::Struct::Contract->new(%contract),
         position      => shift @$data,
@@ -58,4 +60,3 @@ sub _parse {
 
 
 1;
-
