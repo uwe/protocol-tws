@@ -34,16 +34,19 @@ sub _response {
 sub _serialize {
     my ($self) = @_;
 
+    my $contract = $self->contract;
+
     my @out = (
         $self->_id,
         $self->id,
         $self->_serialize_contract,
-        $self->startDateTime || '',
-        $self->endDateTime   || '',
-        $self->numberOfTicks || '',
-        $self->whatToShow    || '',
-        $self->useRTH        || '',
-        $self->ignoreSize    || '',
+        $contract->includeExpired || '',
+        $self->startDateTime      || '',
+        $self->endDateTime        || '',
+        $self->numberOfTicks      || '',
+        $self->whatToShow         || '',
+        $self->useRTH             || '',
+        $self->ignoreSize         || '',
     );
 
     return @out;

@@ -28,31 +28,17 @@ sub _version { 2 }
 sub _serialize {
     my ($self) = @_;
 
-    my $contract = $self->contract;
-
     my @out = (
         $self->_id,
         $self->_version,
         $self->id,
-        $contract->conId           || '',
-        $contract->symbol          || '',
-        $contract->secType         || '', 
-        $contract->expiry          || '',
-        $contract->strike          || '',
-        $contract->right           || '',
-        $contract->multiplier      || '',
-        $contract->exchange        || '',
-        $contract->primaryExchange || '',
-        $contract->currency        || '',
-        $contract->localSymbol     || '',
-        $contract->tradingClass    || '',
-        $self->volatility          || '',
-        $self->underPrice          || '',
-    ); 
-    
+        $self->_serialize_contract,
+        $self->volatility || '',
+        $self->underPrice || '',
+    );
+
     return @out;
-}   
+}
 
 
 1;
-

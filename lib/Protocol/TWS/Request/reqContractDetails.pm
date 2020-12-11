@@ -22,31 +22,16 @@ sub _response {
     );
 }
 
-sub _version { 7 }
+sub _version { 8 }
 
 sub _serialize {
     my ($self) = @_;
-
-    my $contract = $self->contract;
 
     my @out = (
         $self->_id,
         $self->_version,
         $self->id,
-        $contract->conId          || '',
-        $contract->symbol         || '',
-        $contract->secType        || '',
-        $contract->expiry         || '',
-        $contract->strike         || '',
-        $contract->right          || '',
-        $contract->multiplier     || '',
-        $contract->exchange       || '',
-        $contract->currency       || '',
-        $contract->localSymbol    || '',
-        $contract->tradingClass   || '',
-        $contract->includeExpired || '',
-        $contract->secIdType      || '',
-        $contract->secId          || '',
+        $self->_serialize_contract,
     );
 
     return @out;
@@ -54,4 +39,3 @@ sub _serialize {
 
 
 1;
-

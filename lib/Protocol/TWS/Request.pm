@@ -84,6 +84,8 @@ sub _serialize_contract {
         $contract->localSymbol     || '',
         $contract->tradingClass    || '',
         $contract->includeExpired  || '',
+        $contract->secIdType       || '',
+        $contract->secId           || '',
     );
 }
 

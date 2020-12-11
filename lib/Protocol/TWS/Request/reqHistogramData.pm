@@ -30,12 +30,15 @@ sub _version { undef }
 sub _serialize {
     my ($self) = @_;
 
+    my $contract = $self->contract;
+
     my @out = (
         $self->_id,
         $self->id,
         $self->_serialize_contract,
-        $self->useRTH     || '',
-        $self->timePeriod || '',
+        $contract->includeExpired || '',
+        $self->useRTH             || '',
+        $self->timePeriod         || '',
     );
 
     return @out;
